@@ -27,7 +27,7 @@ func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	} else if nums2Mid == 0 {
 		midLeft = nums1[nums1Mid-1]
 	} else {
-		midLeft = max(nums1[nums1Mid-1], nums2[nums2Mid-1])
+		midLeft = getMaxNum(nums1[nums1Mid-1], nums2[nums2Mid-1])
 	}
 	if (len(nums1)+len(nums2))&1 == 1 {
 		return float64(midLeft)
@@ -37,21 +37,30 @@ func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	} else if nums2Mid == len(nums2) {
 		midRight = nums1[nums1Mid]
 	} else {
-		midRight = min(nums1[nums1Mid], nums2[nums2Mid])
+		midRight = getMinNum[int](nums1[nums1Mid], nums2[nums2Mid])
 	}
 	return float64(midLeft+midRight) / 2
 }
 
-func max(a, b int) int {
-	if a < b {
-		return b
-	}
-	return a
+// 像声明接口一样声明
+type MyInt interface {
+	int | int8 | int16 | int32 | int64
 }
 
-func min(a, b int) int {
-	if a < b {
+// T的类型为声明的MyInt
+func getMaxNum[T MyInt](a, b T) T {
+	if a > b {
 		return a
 	}
+
 	return b
+}
+
+// T的类型为声明的MyInt
+func getMinNum[T MyInt](a, b T) T {
+	if a > b {
+		return b
+	}
+
+	return a
 }
