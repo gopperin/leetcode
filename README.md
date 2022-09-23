@@ -1,2 +1,5 @@
 # leetcode
-leetcode cookbook
+
+## leetcode cookbook
+
+https://github.com/halfrost/LeetCode-Go
