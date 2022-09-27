@@ -2,7 +2,6 @@ package array
 
 import (
 	"fmt"
-	"testing"
 
 	"github.com/gopperin/leetcode/structures"
 )
@@ -25,7 +24,7 @@ type ans105 struct {
 	one []int
 }
 
-func Test_Problem105(t *testing.T) {
+func ExampleBuildTree() {
 
 	qs := []question105{
 
@@ -35,12 +34,13 @@ func Test_Problem105(t *testing.T) {
 		},
 	}
 
-	fmt.Printf("------------------------Leetcode Problem 105------------------------\n")
-
 	for _, q := range qs {
 		_, p := q.ans105, q.para105
-		fmt.Printf("【input】:%v      ", p)
-		fmt.Printf("【output】:%v      \n", structures.Tree2ints(BuildTree(p.preorder, p.inorder)))
+		fmt.Println(p)
+		fmt.Println(structures.Tree2ints(BuildTree(p.preorder, p.inorder)))
 	}
-	fmt.Printf("\n\n\n")
+
+	// Output:
+	// {[3 9 20 15 7] [9 3 15 20 7]}
+	// [3 9 20 -9223372036854775808 -9223372036854775808 15 7]
 }
