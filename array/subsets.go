@@ -24,7 +24,6 @@ func generateSubsets(nums []int, k, start int, c []int, res *[][]int) {
 		generateSubsets(nums, k, i+1, c, res)
 		c = c[:len(c)-1]
 	}
-	return
 }
 
 // 解法二
@@ -61,4 +60,20 @@ func Subsets2(nums []int) [][]int {
 		res = append(res, stack)
 	}
 	return res
+}
+
+func Subsets4(nums []int) [][]int {
+	res := [][]int{}
+	dfs(nums, []int{}, &res)
+	return res
+}
+
+func dfs(nums, path []int, res *[][]int) {
+	b := make([]int, len(path))
+	copy(b, path)
+	*res = append(*res, b)
+	for i := 0; i < len(nums); i++ {
+		// last n elements of slice
+		dfs(nums[i+1:], append(b, nums[i]), res)
+	}
 }
