@@ -1,7 +1,7 @@
-package array
+package string
 
 func Zigzag(s string, numRows int) string {
-	matrix, down, up := make([][]byte, numRows, numRows), 0, numRows-2
+	matrix, down, up := make([][]byte, numRows), 0, numRows-2
 	for i := 0; i != len(s); {
 		if down != numRows {
 			matrix[down] = append(matrix[down], byte(s[i]))
@@ -18,9 +18,7 @@ func Zigzag(s string, numRows int) string {
 	}
 	solution := make([]byte, 0, len(s))
 	for _, row := range matrix {
-		for _, item := range row {
-			solution = append(solution, item)
-		}
+		solution = append(solution, row...)
 	}
 	return string(solution)
 }
