@@ -19,3 +19,10 @@ func Min[T MyInt](a, b T) T {
 
 	return a
 }
+
+func Abs[T MyInt](a T) T {
+	if a > 0 {
+		return a
+	}
+	return -a
+}
