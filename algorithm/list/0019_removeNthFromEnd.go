@@ -1,20 +1,5 @@
 package list
 
-import (
-	"github.com/gopperin/leetcode/structures"
-)
-
-// ListNode define
-type ListNode = structures.ListNode
-
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
-
 // 解法一
 func RemoveNthFromEnd(head *ListNode, n int) *ListNode {
 	dummyHead := &ListNode{Next: head}
