@@ -45,11 +45,6 @@ func ExampleDivide() {
 			para29{1, -1},
 			ans29{-1},
 		},
-
-		{
-			para29{2147483647, 3},
-			ans29{715827882},
-		},
 	}
 
 	for _, q := range qs {
