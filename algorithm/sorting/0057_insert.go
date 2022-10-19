@@ -1,4 +1,4 @@
-package array
+package sorting
 
 import "github.com/gopperin/leetcode/algorithm/core"
 
