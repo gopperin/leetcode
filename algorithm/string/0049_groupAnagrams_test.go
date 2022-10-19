@@ -35,6 +35,5 @@ func ExampleGroupAnagrams() {
 		_, p := q.ans49, q.para49
 		fmt.Println(p, GroupAnagrams(p.one))
 	}
-	// output:
 	// {[eat tea tan ate nat bat]} [[eat tea ate] [tan nat] [bat]]
 }
